@@ -1,13 +1,15 @@
 
-import axios from 'axios';
-
+// pages/api/github.js
 export default async function handler(req, res) {
-  try {
-    const response = await axios.get('https://api.github.com/users/rahulraimau/repos', {
-      headers: { Authorization: `Bearer ${process.env.GITHUB_TOKEN}` },
-    });
-    res.status(200).json(response.data);
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch repositories' });
-  }
+  const token = process.env.GITHUB_TOKEN;
+
+  const response = await fetch('https://api.github.com/users/rahulraimau/repos', {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      Accept: 'application/vnd.github+json'
+    }
+  });
+
+  const data = await response.json();
+  res.status(200).json(data);
 }
