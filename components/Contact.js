@@ -7,13 +7,7 @@ export default function Contact() {
       <p className="mb-2">📞 +91 95600 36286</p>
       <p>🔗 <a href="https://github.com/rahulraimau" target="_blank" className="underline">github.com/rahulraimau</a></p>
       <p>🔗 <a href="https://linkedin.com/in/rahul-rai-629554245/" target="_blank" className="underline">linkedin.com/in/rahul-rai</a></p>
-      <a
-        href="/Rahul_Rai_Resume.pdf"
-        download
-        className="mt-6 inline-block bg-yellow-400 text-black font-medium px-6 py-2 rounded-full hover:bg-yellow-300 transition"
-      >
-        📄 Download Resume
-      </a>
+      <a href="/Rahul_Rai_Resume.pdf" download className="mt-6 inline-block bg-yellow-400 text-black font-medium px-6 py-2 rounded-full hover:bg-yellow-300 transition">📄 Download Resume</a>
     </section>
   );
 }
