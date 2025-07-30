@@ -1,14 +1,15 @@
+// components/Navbar.js
 export default function Navbar() {
   return (
-    <nav className="p-4 bg-gray-900 text-white">
-      <ul className="flex gap-6 justify-center">
-        <li><a href="#hero">Hero</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#contact">Contact</a></li>
+    <nav className="fixed top-0 w-full bg-gray-900 text-white shadow-md z-50">
+      <ul className="flex justify-center gap-6 p-4 text-sm sm:text-base">
+        {['Hero', 'About', 'Skills', 'Projects', 'Experience', 'Education', 'Contact'].map((section) => (
+          <li key={section}>
+            <a href={`#${section.toLowerCase()}`} className="hover:text-yellow-400 transition-colors">
+              {section}
+            </a>
+          </li>
+        ))}
       </ul>
     </nav>
   );
